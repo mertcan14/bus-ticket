@@ -1,0 +1,14 @@
+//
+//  LaunchViewController.swift
+//  BusTicket
+//
+//  Created by mertcan YAMAN on 2.04.2023.
+//
+
+import UIKit
+
+class LaunchViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
