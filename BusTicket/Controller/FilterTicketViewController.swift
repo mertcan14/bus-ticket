@@ -8,16 +8,16 @@
 import UIKit
 
 class FilterTicketViewController: UIViewController {
-
-    var user: Passenger = Passenger(id: 1, firstName: "Mertcan", lastName: "Yaman")
     
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
     @IBOutlet weak var datePickerField: UIDatePicker!
     
+    var dateTicket: DateTicket = DateTicket()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -37,15 +37,39 @@ class FilterTicketViewController: UIViewController {
         datePickerField.date = Date()
     }
     @IBAction func changeTextFieldBtnClicked(_ sender: Any) {
-        var changeValue = fromTextField.text
+        let changeValue = fromTextField.text
         fromTextField.text = toTextField.text
         toTextField.text = changeValue
     }
     @IBAction func searchBtnClicked(_ sender: Any) {
         if fromTextField.text != "" && toTextField.text != "" {
+            let components = Calendar.current.dateComponents([.day, .month, .year], from: datePickerField.date)
+            guard let day = components.day else { return }
+            guard let month = components.month else { return }
+            guard let year = components.year else { return }
+            dateTicket.day = day
+            dateTicket.month = month
+            dateTicket.year = year
             performSegue(withIdentifier: "toTicketListVC", sender: nil)
         }else {
             print("Girişleri boş bırakamazsınız.")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTicketListVC" {
+            if let ticketListVC = segue.destination as? TicketListViewController {
+                guard let fromText = fromTextField.text else {
+                    return
+                }
+                guard let toText = toTextField.text else {
+                    return
+                }
+                ticketListVC.dateForTicket = dateTicket
+                ticketListVC.fromForTicket = fromText
+                ticketListVC.toForTicket = toText
+                
+            }
         }
     }
 }
