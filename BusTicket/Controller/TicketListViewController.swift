@@ -41,6 +41,7 @@ class TicketListViewController: UIViewController {
         if segue.identifier == "toDetailBusVC" {
             if let detailBusInfoVC = segue.destination as? DetailBusViewController {
                 detailBusInfoVC.busInfo = self.busInfo
+                detailBusInfoVC.dateForTicket = self.dateForTicket
             }
         }
     }

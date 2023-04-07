@@ -17,6 +17,9 @@
 		E5A1AD6729DEE53300765E01 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */; };
 		E5A1AD6929DEE64200765E01 /* BusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6829DEE64200765E01 /* BusInfo.swift */; };
 		E5A1AD6B29DF176B00765E01 /* DetailBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */; };
+		E5A1AD6D29DF22C200765E01 /* SeatDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6C29DF22C200765E01 /* SeatDataManager.swift */; };
+		E5A1AD6F29DF22F100765E01 /* MockSeatCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6E29DF22F100765E01 /* MockSeatCreater.swift */; };
+		E5A1AD7129DF237800765E01 /* ExampleSeatConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD7029DF237800765E01 /* ExampleSeatConfig.swift */; };
 		E5C16CB029DD8DA2000D83D3 /* TicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C16CAF29DD8DA2000D83D3 /* TicketListViewController.swift */; };
 		E5CE93A929D9047300C916CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CE93A829D9047300C916CF /* AppDelegate.swift */; };
 		E5CE93AB29D9047300C916CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CE93AA29D9047300C916CF /* SceneDelegate.swift */; };
@@ -49,6 +52,9 @@
 		E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 		E5A1AD6829DEE64200765E01 /* BusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusInfo.swift; sourceTree = "<group>"; };
 		E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBusViewController.swift; sourceTree = "<group>"; };
+		E5A1AD6C29DF22C200765E01 /* SeatDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatDataManager.swift; sourceTree = "<group>"; };
+		E5A1AD6E29DF22F100765E01 /* MockSeatCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSeatCreater.swift; sourceTree = "<group>"; };
+		E5A1AD7029DF237800765E01 /* ExampleSeatConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleSeatConfig.swift; sourceTree = "<group>"; };
 		E5C16CAF29DD8DA2000D83D3 /* TicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
 		E5CE93A529D9047300C916CF /* BusTicket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTicket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5CE93A829D9047300C916CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +153,9 @@
 				E5CE93B129D9047400C916CF /* Assets.xcassets */,
 				E5CE93B329D9047400C916CF /* LaunchScreen.storyboard */,
 				E5CE93B629D9047400C916CF /* Info.plist */,
+				E5A1AD6C29DF22C200765E01 /* SeatDataManager.swift */,
+				E5A1AD6E29DF22F100765E01 /* MockSeatCreater.swift */,
+				E5A1AD7029DF237800765E01 /* ExampleSeatConfig.swift */,
 			);
 			path = BusTicket;
 			sourceTree = "<group>";
@@ -320,9 +329,12 @@
 				E5E5CCA629D9CDF20078B1BD /* OnboardingSlide.swift in Sources */,
 				E5977D4129DCEC8E00E35793 /* Passenger.swift in Sources */,
 				E5DCB51D29DB160D000AC687 /* SignUpViewController.swift in Sources */,
+				E5A1AD6D29DF22C200765E01 /* SeatDataManager.swift in Sources */,
 				E5CE93A929D9047300C916CF /* AppDelegate.swift in Sources */,
+				E5A1AD6F29DF22F100765E01 /* MockSeatCreater.swift in Sources */,
 				E5977D4529DCEE6500E35793 /* DateTicket.swift in Sources */,
 				E5977D3F29DCEC6500E35793 /* Ticket.swift in Sources */,
+				E5A1AD7129DF237800765E01 /* ExampleSeatConfig.swift in Sources */,
 				E5E5CCA129D9C6050078B1BD /* OnboardingViewController.swift in Sources */,
 				E5C16CB029DD8DA2000D83D3 /* TicketListViewController.swift in Sources */,
 				E5E5CCA429D9C7CC0078B1BD /* UIView+Extension.swift in Sources */,
