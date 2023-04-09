@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E032EE92708A731F6ECDE986 /* Pods_BusTicket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764D843C3E8F935E209D9A8E /* Pods_BusTicket.framework */; };
 		E591FCB729DA4891003A43EC /* bus.json in Resources */ = {isa = PBXBuildFile; fileRef = E591FCB629DA4891003A43EC /* bus.json */; };
+		E596D07729E2F000004F9524 /* DetailTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596D07629E2F000004F9524 /* DetailTicketViewController.swift */; };
+		E596D07929E301BE004F9524 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = E596D07829E301BE004F9524 /* success.json */; };
 		E5977D3F29DCEC6500E35793 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D3E29DCEC6500E35793 /* Ticket.swift */; };
 		E5977D4129DCEC8E00E35793 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4029DCEC8E00E35793 /* Passenger.swift */; };
 		E5977D4329DCED6300E35793 /* FilterTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4229DCED6300E35793 /* FilterTicketViewController.swift */; };
@@ -44,6 +46,8 @@
 		22545C5ABB237817D11BD2D1 /* Pods-BusTicket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTicket.debug.xcconfig"; path = "Target Support Files/Pods-BusTicket/Pods-BusTicket.debug.xcconfig"; sourceTree = "<group>"; };
 		764D843C3E8F935E209D9A8E /* Pods_BusTicket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTicket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E591FCB629DA4891003A43EC /* bus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bus.json; sourceTree = "<group>"; };
+		E596D07629E2F000004F9524 /* DetailTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketViewController.swift; sourceTree = "<group>"; };
+		E596D07829E301BE004F9524 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		E5977D3E29DCEC6500E35793 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		E5977D4029DCEC8E00E35793 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
 		E5977D4229DCED6300E35793 /* FilterTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTicketViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		E591FCB529DA4887003A43EC /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				E596D07829E301BE004F9524 /* success.json */,
 				E5DCB52229DB17E4000AC687 /* 114386-welcome.json */,
 				E5DCB52029DB17B9000AC687 /* 99863-welcome.json */,
 				E5DCB51E29DB1787000AC687 /* pinkwelcome.json */,
@@ -191,6 +196,7 @@
 				E5977D4229DCED6300E35793 /* FilterTicketViewController.swift */,
 				E5C16CAF29DD8DA2000D83D3 /* TicketListViewController.swift */,
 				E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */,
+				E596D07629E2F000004F9524 /* DetailTicketViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5D1622829DAEB190031BFB8 /* world.json in Resources */,
+				E596D07929E301BE004F9524 /* success.json in Resources */,
 				E5CE93B529D9047400C916CF /* LaunchScreen.storyboard in Resources */,
 				E5CE93B229D9047400C916CF /* Assets.xcassets in Resources */,
 				E5DCB52329DB17E4000AC687 /* 114386-welcome.json in Resources */,
@@ -333,6 +340,7 @@
 				E5CE93A929D9047300C916CF /* AppDelegate.swift in Sources */,
 				E5A1AD6F29DF22F100765E01 /* MockSeatCreater.swift in Sources */,
 				E5977D4529DCEE6500E35793 /* DateTicket.swift in Sources */,
+				E596D07729E2F000004F9524 /* DetailTicketViewController.swift in Sources */,
 				E5977D3F29DCEC6500E35793 /* Ticket.swift in Sources */,
 				E5A1AD7129DF237800765E01 /* ExampleSeatConfig.swift in Sources */,
 				E5E5CCA129D9C6050078B1BD /* OnboardingViewController.swift in Sources */,

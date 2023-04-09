@@ -33,7 +33,7 @@ struct Ticket {
             return
         }
         self.seatCount = seatCount
-        self.seat = Array(repeating: 0, count: seatCount)
+        self.seat.reserveCapacity(seatCount)
     }
     
     mutating func addSeat(_ seatNo: Int) {

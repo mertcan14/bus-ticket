@@ -29,7 +29,7 @@ class OnboardingViewController: UIViewController {
                     OnboardingSlide(title: "En Seçkin Firmalar",
                                     description: "Better Ticket olarak en seçkin otobüs firmalarını sizler için bir araya topladık. Tüm firmaların otobüs biletlerini Better Ticket'da karşılaştırabilir, uygun otobüs biletini bulabilir ve online alabilirsiniz.", image: "bus"),
                     OnboardingSlide(title: "Dünyanın Her Noktasına Ulaşım",
-                                    description: "208 Ülke \n 100.000+ Durak \n 3.000+ Otobüs \n ile siz değerli kullanıcılarmıza sunmaktayız.", image: "world"),
+                                    description: "208 Ülke \n 100.000+ Durak \n ile siz değerli kullanıcılarmıza sunmaktayız.", image: "world"),
                 ]
         collectionView.contentInsetAdjustmentBehavior = .never
     }

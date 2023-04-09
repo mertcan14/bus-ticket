@@ -13,6 +13,7 @@ class DetailBusViewController: UIViewController {
     var selectedSeats: [SeatStub] = []
     var dataManager = SeatDataManager()
     var dateForTicket: DateTicket = DateTicket()
+    var ticket: Ticket?
     
     var user: Passenger = Passenger(id: 1, firstName: "Mertcan", lastName: "Yaman")
     
@@ -38,7 +39,7 @@ class DetailBusViewController: UIViewController {
         dataManager.seatList = [first]
         seatView?.reload()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(alertFunc), name: Notification.Name(rawValue: "maxSelected"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(alertMaxSelected), name: Notification.Name(rawValue: "maxSelected"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeSelectedSeat(_:)), name: Notification.Name(rawValue: "selectedSeat"), object: nil)
     }
     
@@ -56,15 +57,36 @@ class DetailBusViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        let vH = view.frame.height
         let vW = view.frame.width
         seatView?.frame = CGRect(x: 0, y: 130, width: vW, height: 225)
     }
     
     @IBAction func buyBtnClicked(_ sender: Any) {
-        print(user)
-        print(dateForTicket)
-        print(timeConvertInt(busInfo.depatureTime!))
+        if !selectedSeats.isEmpty {
+            if !registeredUserSwitch.isOn {
+                
+                user.firstName = firstNameTxtField.text ?? ""
+                user.lastName = lastNameTxtField.text ?? ""
+                user.id = Int(tcNoTxtField.text ?? "0") ?? 0
+            }
+            var timeTicket = timeConvertInt(busInfo.depatureTime!)
+            ticket = Ticket(passenger: user, date: dateForTicket, time: timeTicket)
+            ticket?.reserveSeat(selectedSeats.count)
+            for selectedSeat in selectedSeats {
+                ticket?.addSeat(selectedSeat.number)
+            }
+            performSegue(withIdentifier: "toDetailTicketVC", sender: nil)
+        }else {
+            alertFunc("Not Selected Seat", "You must choose a seat")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailTicketVC" {
+            if let detailTicketVC = segue.destination as? DetailTicketViewController {
+                detailTicketVC.ticket = ticket
+            }
+        }
     }
     
     @IBAction func registeredUserChange(_ sender: Any) {
@@ -100,11 +122,17 @@ class DetailBusViewController: UIViewController {
         guard let selectedSeatList = seatList.object as? [SeatStub] else { return }
         self.selectedSeats = selectedSeatList
     }
-    @objc func alertFunc() {
-        let alert = UIAlertController(title: "Max Selected", message: "You can choose up to 5", preferredStyle: .alert)
+    @objc func alertMaxSelected() {
+        alertFunc("Max Selected", "You can choose up to 5 seats.")
+    }
+    
+    
+    func alertFunc(_ title: String, _ content: String) {
+        let alert = UIAlertController(title: title, message: content, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
         self.present(alert, animated: true)
     }
+    
 }
 
 

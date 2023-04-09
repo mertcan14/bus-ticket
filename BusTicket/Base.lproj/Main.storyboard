@@ -839,7 +839,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GiZ-Fu-l25">
                                 <rect key="frame" x="50" y="714" width="275" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Buying"/>
+                                <buttonConfiguration key="configuration" style="filled" title="BUY"/>
                                 <connections>
                                     <action selector="buyBtnClicked:" destination="EJo-VV-Nbd" eventType="touchUpInside" id="i1w-Yd-zzM"/>
                                 </connections>
@@ -1005,11 +1005,39 @@
                         <outlet property="seatView" destination="25M-Jp-024" id="cw2-6X-Nvh"/>
                         <outlet property="tcNoTxtField" destination="kuA-HJ-bAm" id="jCL-QO-SXm"/>
                         <outlet property="timeLabel" destination="PNr-C7-S9l" id="c7O-2I-ZyM"/>
+                        <segue destination="ogD-cY-rxh" kind="show" identifier="toDetailTicketVC" id="DnH-7Q-Yg2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pca-jB-wbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6012" y="12.561576354679804"/>
+        </scene>
+        <!--Detail Ticket View Controller-->
+        <scene sceneID="qMA-hF-7bA">
+            <objects>
+                <viewController id="ogD-cY-rxh" customClass="DetailTicketViewController" customModule="BusTicket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RGF-Za-uwd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 8" translatesAutoresizingMaskIntoConstraints="NO" id="rmb-6V-rC8">
+                                <rect key="frame" x="0.0" y="99" width="375" height="604"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yeo-76-IMc"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rmb-6V-rC8" firstAttribute="leading" secondItem="Yeo-76-IMc" secondAttribute="leading" id="SYe-qh-TQf"/>
+                            <constraint firstItem="Yeo-76-IMc" firstAttribute="bottom" secondItem="rmb-6V-rC8" secondAttribute="bottom" constant="75" id="Wbh-uM-yLH"/>
+                            <constraint firstItem="rmb-6V-rC8" firstAttribute="top" secondItem="Yeo-76-IMc" secondAttribute="top" constant="8" id="ese-sO-Bx6"/>
+                            <constraint firstItem="Yeo-76-IMc" firstAttribute="trailing" secondItem="rmb-6V-rC8" secondAttribute="trailing" id="yTq-hP-SCn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" style="editor" id="gHV-pA-p6n"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YAx-yl-SEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6800.8000000000002" y="12.561576354679804"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="emn-0O-dxv">
@@ -1037,9 +1065,10 @@
         <designable name="gJL-uc-dbN"/>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="4zo-Ct-LlB"/>
+        <segue reference="5fg-mM-49j"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Group 8" width="492" height="915"/>
         <image name="Logo" width="500" height="500"/>
         <image name="arrow.left.arrow.right.square" catalog="system" width="128" height="114"/>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="97"/>
