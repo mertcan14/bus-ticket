@@ -17,6 +17,8 @@
 		E5977D4329DCED6300E35793 /* FilterTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4229DCED6300E35793 /* FilterTicketViewController.swift */; };
 		E5977D4529DCEE6500E35793 /* DateTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4429DCEE6500E35793 /* DateTicket.swift */; };
 		E5977D4729DCEFB000E35793 /* TimeTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4629DCEFB000E35793 /* TimeTicket.swift */; };
+		E5994BCB29E44FBE005B36E7 /* FormPassengerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5994BC929E44FBE005B36E7 /* FormPassengerPopUp.swift */; };
+		E5994BCC29E44FBE005B36E7 /* FormPassengerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5994BCA29E44FBE005B36E7 /* FormPassengerPopUp.xib */; };
 		E5A1AD6729DEE53300765E01 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */; };
 		E5A1AD6929DEE64200765E01 /* BusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6829DEE64200765E01 /* BusInfo.swift */; };
 		E5A1AD6B29DF176B00765E01 /* DetailBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */; };
@@ -55,6 +57,8 @@
 		E5977D4229DCED6300E35793 /* FilterTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTicketViewController.swift; sourceTree = "<group>"; };
 		E5977D4429DCEE6500E35793 /* DateTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTicket.swift; sourceTree = "<group>"; };
 		E5977D4629DCEFB000E35793 /* TimeTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTicket.swift; sourceTree = "<group>"; };
+		E5994BC929E44FBE005B36E7 /* FormPassengerPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPassengerPopUp.swift; sourceTree = "<group>"; };
+		E5994BCA29E44FBE005B36E7 /* FormPassengerPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormPassengerPopUp.xib; sourceTree = "<group>"; };
 		E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 		E5A1AD6829DEE64200765E01 /* BusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusInfo.swift; sourceTree = "<group>"; };
 		E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBusViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 				E5E5CCA729D9CE480078B1BD /* OnboardingCollectionViewCell.swift */,
 				E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */,
 				E595222E29E36A4500134311 /* DetailTicketCollectionViewCell.swift */,
+				E5994BC929E44FBE005B36E7 /* FormPassengerPopUp.swift */,
+				E5994BCA29E44FBE005B36E7 /* FormPassengerPopUp.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 				E5D1622829DAEB190031BFB8 /* world.json in Resources */,
 				E596D07929E301BE004F9524 /* success.json in Resources */,
 				E5CE93B529D9047400C916CF /* LaunchScreen.storyboard in Resources */,
+				E5994BCC29E44FBE005B36E7 /* FormPassengerPopUp.xib in Resources */,
 				E5CE93B229D9047400C916CF /* Assets.xcassets in Resources */,
 				E5DCB52329DB17E4000AC687 /* 114386-welcome.json in Resources */,
 				E5F2C00F29DA569B00AC481C /* ticket.json in Resources */,
@@ -357,6 +364,7 @@
 				E5977D4729DCEFB000E35793 /* TimeTicket.swift in Sources */,
 				E5A1AD6929DEE64200765E01 /* BusInfo.swift in Sources */,
 				E5E5CCA829D9CE480078B1BD /* OnboardingCollectionViewCell.swift in Sources */,
+				E5994BCB29E44FBE005B36E7 /* FormPassengerPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

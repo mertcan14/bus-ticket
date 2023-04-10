@@ -13,6 +13,8 @@ class FilterTicketViewController: UIViewController {
     
     @IBOutlet weak var toTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
+    @IBOutlet weak var todayBtn: UIButton!
+    @IBOutlet weak var tomorrowBtn: UIButton!
     @IBOutlet weak var datePickerField: UIDatePicker!
     
     let cities = [ "Adana", "Adıyaman", "Afyon", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "İçel (Mersin)", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"]
@@ -20,7 +22,6 @@ class FilterTicketViewController: UIViewController {
     var dateTicket: DateTicket = DateTicket()
     var tableView = UITableView()
     var currentTxtField = 0
-    let searchController = UISearchController()
     var isFiltering = false
     
     override func viewDidLoad() {
@@ -33,7 +34,7 @@ class FilterTicketViewController: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.shadowColor = .clear
-        appearance.backgroundColor = UIColor(red: 0, green: 128/255, blue: 1, alpha: 1)
+        appearance.backgroundColor = UIColor(red: 45/255, green: 75/255, blue: 115/255, alpha: 1)
 
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.standardAppearance = appearance
@@ -41,10 +42,20 @@ class FilterTicketViewController: UIViewController {
     }
     
     @IBAction func tomorrowBtnClicked(_ sender: Any) {
+        todayBtn.isEnabled = true
+        todayBtn.backgroundColor = .clear
+        
+        tomorrowBtn.isEnabled = false
+        tomorrowBtn.backgroundColor = .white
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())
         datePickerField.date = tomorrow ?? Date()
     }
     @IBAction func todayBtnClicked(_ sender: Any) {
+        todayBtn.isEnabled = false
+        todayBtn.backgroundColor = .white
+        
+        tomorrowBtn.isEnabled = true
+        tomorrowBtn.backgroundColor = .clear
         datePickerField.date = Date()
     }
     @IBAction func changeTextFieldBtnClicked(_ sender: Any) {
@@ -66,17 +77,24 @@ class FilterTicketViewController: UIViewController {
             print("Girişleri boş bırakamazsınız.")
         }
     }
-    @IBAction func fromTxtEditBegin(_ sender: Any) {
+    @IBAction func fromTxtChanged(_ sender: Any) {
+        if fromTextField.text != "" {
+            search(fromTextField.text ?? "")
+        }
+    }
+    @IBAction func toTxtChanged(_ sender: Any) {
+        if toTextField.text != "" {
+            search(toTextField.text ?? "")
+        }
+    }
+    @IBAction func fromTxtBegin(_ sender: Any) {
         currentTxtField = 1
+        searchCancel()
     }
-    @IBAction func toTxtEditBegin(_ sender: Any) {
+    @IBAction func toTxtBegin(_ sender: Any) {
         currentTxtField = 2
+        searchCancel()
     }
-    
-    func initSearchController() {
-        
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTicketListVC" {
@@ -93,6 +111,19 @@ class FilterTicketViewController: UIViewController {
                 
             }
         }
+    }
+    func search(_ text: String) {
+        filteredCities = cities.filter({ (city:String) -> Bool in
+            return city.lowercased().contains(text.lowercased()) ?? false
+        })
+        
+        isFiltering = true
+        
+        tableView.reloadData()
+    }
+    func searchCancel() {
+        isFiltering = false
+        tableView.reloadData()
     }
 }
 
@@ -122,11 +153,10 @@ extension FilterTicketViewController: UITextFieldDelegate {
         tableView.layer.masksToBounds = true
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "selectCity")
     }
-    
     func tableViewAnimated(load: Bool) {
         if load {
             UIView.animate(withDuration: 0.2) {
-                self.tableView.frame = CGRect(x: 10, y: 100, width: self.view.frame.width - 20, height: self.view.frame.height - 100)
+                self.tableView.frame = CGRect(x: 10, y: 350, width: self.view.frame.width - 20, height: self.view.frame.height - 100)
             }
         }else {
             UIView.animate(withDuration: 0.2) {
@@ -164,32 +194,15 @@ extension FilterTicketViewController: UITableViewDelegate, UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableViewAnimated(load: false)
-        if currentTxtField == 1 {
+        if currentTxtField == 1 && isFiltering{
+            fromTextField.text = filteredCities[indexPath.row]
+        }else if currentTxtField == 2 && isFiltering{
+            toTextField.text = filteredCities[indexPath.row]
+        }else if currentTxtField == 1 && !isFiltering {
             fromTextField.text = cities[indexPath.row]
         }else {
             toTextField.text = cities[indexPath.row]
         }
         
     }
-}
-
-extension FilterTicketViewController: UISearchBarDelegate {
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        filteredCities = cities.filter({ (city:String) -> Bool in
-            return city.lowercased().contains(searchText.lowercased()) ?? false
-        })
-        
-        isFiltering = true
-        
-        tableView.reloadData()
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isFiltering = false
-        searchBar.text = ""
-        tableView.reloadData()
-    }
-    
 }

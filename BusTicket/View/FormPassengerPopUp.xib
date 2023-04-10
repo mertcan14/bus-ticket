@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FormPassengerPopUp" customModule="BusTicket" customModuleProvider="target">
+            <connections>
+                <outlet property="backView" destination="iG5-sO-c9Z" id="UHW-j5-GiG"/>
+                <outlet property="contentView" destination="gb2-VJ-gnZ" id="Adc-rg-QEf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iG5-sO-c9Z" userLabel="BackView">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gb2-VJ-gnZ" userLabel="ContentView">
+                    <rect key="frame" x="24" y="203.66666666666663" width="342" height="450"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MERTCAN YAMAN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIA-yB-VbF">
+                            <rect key="frame" x="100" y="214.33333333333334" width="142" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imo-Fv-tvD">
+                            <rect key="frame" x="12" y="407" width="318" height="35"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Done"/>
+                            <connections>
+                                <action selector="doneBtnClicked:" destination="-1" eventType="touchUpInside" id="3ER-yr-wFA"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="HIA-yB-VbF" firstAttribute="centerY" secondItem="gb2-VJ-gnZ" secondAttribute="centerY" id="3p4-Hh-XKE"/>
+                        <constraint firstItem="HIA-yB-VbF" firstAttribute="centerX" secondItem="gb2-VJ-gnZ" secondAttribute="centerX" id="6sM-Ld-ZLx"/>
+                        <constraint firstAttribute="trailing" secondItem="imo-Fv-tvD" secondAttribute="trailing" constant="12" id="LRD-8B-wts"/>
+                        <constraint firstAttribute="height" constant="450" id="Q85-IR-pGa"/>
+                        <constraint firstAttribute="bottom" secondItem="imo-Fv-tvD" secondAttribute="bottom" constant="8" id="fa9-5R-0N5"/>
+                        <constraint firstItem="imo-Fv-tvD" firstAttribute="leading" secondItem="gb2-VJ-gnZ" secondAttribute="leading" constant="12" id="pZq-sn-XPQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemPinkColor"/>
+            <constraints>
+                <constraint firstItem="iG5-sO-c9Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0yt-Xt-MHu"/>
+                <constraint firstAttribute="trailing" secondItem="iG5-sO-c9Z" secondAttribute="trailing" id="1qF-1S-TxF"/>
+                <constraint firstItem="gb2-VJ-gnZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="HmB-Yd-X2U"/>
+                <constraint firstItem="iG5-sO-c9Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NmW-8h-Vgt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gb2-VJ-gnZ" secondAttribute="trailing" constant="24" id="ZXc-2h-5WW"/>
+                <constraint firstAttribute="bottom" secondItem="iG5-sO-c9Z" secondAttribute="bottom" id="dUx-ln-jfp"/>
+                <constraint firstItem="gb2-VJ-gnZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="fYu-LW-3zJ"/>
+                <constraint firstItem="gb2-VJ-gnZ" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="vsm-Re-nMd"/>
+            </constraints>
+            <point key="canvasLocation" x="36.92307692307692" y="20.616113744075829"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

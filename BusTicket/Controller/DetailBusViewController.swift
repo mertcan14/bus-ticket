@@ -50,8 +50,6 @@ class DetailBusViewController: UIViewController {
         contentLabel.text = busInfo.content
         priceLabel.text = busInfo.price
         timeLabel.text = busInfo.time
-        formView.layer.borderWidth = 4
-        formView.layer.borderColor = UIColor(red: 1.0, green: 120/255, blue: 56/255, alpha: 1.0).cgColor
         changeUser()
     }
     
@@ -62,6 +60,8 @@ class DetailBusViewController: UIViewController {
     }
     
     @IBAction func buyBtnClicked(_ sender: Any) {
+//        let popUpScreen = FormPassengerPopUp()
+//        popUpScreen.appear(sender: self)
         if !selectedSeats.isEmpty {
             if !registeredUserSwitch.isOn {
                 
