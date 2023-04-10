@@ -134,5 +134,3 @@ class DetailBusViewController: UIViewController {
     }
     
 }
-
-

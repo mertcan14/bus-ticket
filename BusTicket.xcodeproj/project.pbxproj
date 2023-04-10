@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E032EE92708A731F6ECDE986 /* Pods_BusTicket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764D843C3E8F935E209D9A8E /* Pods_BusTicket.framework */; };
 		E591FCB729DA4891003A43EC /* bus.json in Resources */ = {isa = PBXBuildFile; fileRef = E591FCB629DA4891003A43EC /* bus.json */; };
+		E595222F29E36A4500134311 /* DetailTicketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E595222E29E36A4500134311 /* DetailTicketCollectionViewCell.swift */; };
 		E596D07729E2F000004F9524 /* DetailTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596D07629E2F000004F9524 /* DetailTicketViewController.swift */; };
 		E596D07929E301BE004F9524 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = E596D07829E301BE004F9524 /* success.json */; };
 		E5977D3F29DCEC6500E35793 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D3E29DCEC6500E35793 /* Ticket.swift */; };
@@ -46,6 +47,7 @@
 		22545C5ABB237817D11BD2D1 /* Pods-BusTicket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTicket.debug.xcconfig"; path = "Target Support Files/Pods-BusTicket/Pods-BusTicket.debug.xcconfig"; sourceTree = "<group>"; };
 		764D843C3E8F935E209D9A8E /* Pods_BusTicket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTicket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E591FCB629DA4891003A43EC /* bus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bus.json; sourceTree = "<group>"; };
+		E595222E29E36A4500134311 /* DetailTicketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketCollectionViewCell.swift; sourceTree = "<group>"; };
 		E596D07629E2F000004F9524 /* DetailTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketViewController.swift; sourceTree = "<group>"; };
 		E596D07829E301BE004F9524 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		E5977D3E29DCEC6500E35793 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				E5E5CCA729D9CE480078B1BD /* OnboardingCollectionViewCell.swift */,
 				E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */,
+				E595222E29E36A4500134311 /* DetailTicketCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5D1622A29DAF3580031BFB8 /* LoginViewController.swift in Sources */,
+				E595222F29E36A4500134311 /* DetailTicketCollectionViewCell.swift in Sources */,
 				E5E5CCA629D9CDF20078B1BD /* OnboardingSlide.swift in Sources */,
 				E5977D4129DCEC8E00E35793 /* Passenger.swift in Sources */,
 				E5DCB51D29DB160D000AC687 /* SignUpViewController.swift in Sources */,
