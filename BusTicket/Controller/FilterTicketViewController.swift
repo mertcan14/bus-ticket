@@ -6,11 +6,11 @@
 //
 
 import UIKit
-
+import MapKit
 
 class FilterTicketViewController: UIViewController {
     
-    
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var toTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var todayBtn: UIButton!
@@ -23,13 +23,12 @@ class FilterTicketViewController: UIViewController {
     var tableView = UITableView()
     var currentTxtField = 0
     var isFiltering = false
+    var destinations: [MKPointAnnotation] = []
+    var currentRoute: MKRoute?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fromTextField.delegate = self
-        toTextField.delegate = self
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -116,14 +115,85 @@ class FilterTicketViewController: UIViewController {
         filteredCities = cities.filter({ (city:String) -> Bool in
             return city.lowercased().contains(text.lowercased()) ?? false
         })
-        
         isFiltering = true
-        
         tableView.reloadData()
     }
     func searchCancel() {
         isFiltering = false
         tableView.reloadData()
+    }
+    func createMapPin() {
+        let request = MKLocalSearch.Request()
+        if self.mapView.annotations.count == 2 {
+            let requestLast = MKLocalSearch.Request()
+            request.naturalLanguageQuery = fromTextField.text
+            requestLast.naturalLanguageQuery = toTextField.text
+            let firstSearch = MKLocalSearch(request: request)
+            let lastSearch = MKLocalSearch(request: requestLast)
+            activatedSearchRequest(firstSearch,fromTextField.text ?? "")
+            activatedSearchRequest(lastSearch,toTextField.text ?? "")
+        }else if currentTxtField == 1 {
+            request.naturalLanguageQuery = fromTextField.text
+            let activeSearch = MKLocalSearch(request: request)
+            activatedSearchRequest(activeSearch,fromTextField.text ?? "")
+        }else {
+            request.naturalLanguageQuery = toTextField.text
+            let activeSearch = MKLocalSearch(request: request)
+            activatedSearchRequest(activeSearch,toTextField.text ?? "")
+        }
+    }
+    private func activatedSearchRequest(_ request: MKLocalSearch, _ text:String) {
+        request.start { response, error in
+            if error != nil {
+                fatalError("City is nil")
+            }else {
+                let latitude = response?.boundingRegion.center.latitude
+                let longitude = response?.boundingRegion.center.longitude
+                
+                let annotation = MKPointAnnotation()
+                annotation.title = text
+                annotation.coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
+                
+                if self.mapView.annotations.count == 2 {
+                    let allAnnotations = self.mapView.annotations
+                    self.mapView.removeAnnotations(allAnnotations)
+                    self.destinations.removeAll()
+                    self.mapView.removeOverlays(self.mapView.overlays)
+                }
+                
+                self.mapView.addAnnotation(annotation)
+                self.destinations.append(annotation)
+                
+                if self.destinations.count == 2 {
+                    self.constructRoute()
+                }
+                
+                let region = MKCoordinateRegion.init(center: annotation.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
+                self.mapView.setRegion(region, animated: true)
+            }
+        }
+    }
+    func constructRoute() {
+        let directionRequest = MKDirections.Request()
+        guard let firstCoordinate = self.destinations.first?.coordinate else { return }
+        guard let secondCoordinate = self.destinations.last?.coordinate else { return }
+        directionRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: firstCoordinate))
+        directionRequest.destination = MKMapItem(placemark: MKPlacemark(coordinate: secondCoordinate))
+        directionRequest.transportType = .automobile
+        directionRequest.requestsAlternateRoutes = true
+        
+        let directions = MKDirections(request: directionRequest)
+        directions.calculate {[weak self] (response, error) in
+            
+            guard let strongSelf = self else{ return }
+            if error != nil {
+                return
+            }else if let responseDirection = response, responseDirection.routes.count > 0 {
+                strongSelf.currentRoute = responseDirection.routes[0]
+                strongSelf.mapView.addOverlay(responseDirection.routes[0].polyline)
+                strongSelf.mapView.setVisibleMapRect(responseDirection.routes[0].polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50), animated: true)
+            }
+        }
     }
 }
 
@@ -203,6 +273,16 @@ extension FilterTicketViewController: UITableViewDelegate, UITableViewDataSource
         }else {
             toTextField.text = cities[indexPath.row]
         }
-        
+        createMapPin()
+    }
+}
+
+extension FilterTicketViewController: MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        guard let currentRoute = currentRoute else { return MKOverlayRenderer() }
+        let polyLineRenderer = MKPolylineRenderer(polyline: currentRoute.polyline)
+        polyLineRenderer.strokeColor = .purple
+        polyLineRenderer.lineWidth = 4
+        return polyLineRenderer
     }
 }

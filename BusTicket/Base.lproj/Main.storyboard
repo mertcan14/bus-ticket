@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2UW-fg-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rpm-1o-FIM">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -103,9 +104,11 @@
                                     <constraint firstAttribute="width" constant="75" id="K7Q-Sc-pgM"/>
                                     <constraint firstAttribute="height" constant="75" id="yoQ-nq-vkJ"/>
                                 </constraints>
+                                <color key="tintColor" red="0.1764705882" green="0.29411764709999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="play.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                    <color key="baseBackgroundColor" red="0.1764705882" green="0.29411764709999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -118,8 +121,8 @@
                             </button>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="njv-kX-AN2">
                                 <rect key="frame" x="8.0000000000000071" y="719" width="115.66666666666669" height="26"/>
-                                <color key="pageIndicatorTintColor" red="0.0" green="0.27580262830000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="1" green="0.47058823529411764" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="pageIndicatorTintColor" red="0.1764705882" green="0.29411764709999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.74901960779999999" green="0.55294117649999996" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8wK-8b-wAi"/>
@@ -219,6 +222,7 @@
                                     <constraint firstAttribute="height" constant="50" id="QZF-J7-fWl"/>
                                     <constraint firstAttribute="width" constant="150" id="tYI-kl-ZZp"/>
                                 </constraints>
+                                <color key="tintColor" red="0.1764705882" green="0.29411764709999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
                                     <attributedString key="attributedTitle">
@@ -230,7 +234,7 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseBackgroundColor" red="0.0" green="0.078431372549019607" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="0.1764705882" green="0.29411764709999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginBtnClicked:" destination="bzd-cY-17f" eventType="touchUpInside" id="mQh-0b-hGO"/>
@@ -387,6 +391,7 @@
                                     <constraint firstAttribute="width" constant="150" id="B62-tv-l1c"/>
                                     <constraint firstAttribute="height" constant="50" id="M7X-KT-IS2"/>
                                 </constraints>
+                                <color key="tintColor" red="0.1764705882" green="0.29411764709999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
                                     <attributedString key="attributedTitle">
@@ -397,7 +402,7 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseBackgroundColor" red="0.0" green="0.078431372550000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="0.1764705882" green="0.29411764709999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="signUpBtnClicked:" destination="MlH-Rw-V77" eventType="touchUpInside" id="Zf0-Vh-qed"/>
@@ -513,7 +518,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyH-Sv-uLv">
-                                <rect key="frame" x="25" y="240" width="325" height="200"/>
+                                <rect key="frame" x="25" y="240" width="325" height="220"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3p-WD-cc2">
                                         <rect key="frame" x="8" y="8" width="309" height="34"/>
@@ -522,6 +527,7 @@
                                         <connections>
                                             <action selector="fromTxtBegin:" destination="6rj-5U-VFQ" eventType="editingDidBegin" id="E4c-As-cIE"/>
                                             <action selector="fromTxtChanged:" destination="6rj-5U-VFQ" eventType="editingChanged" id="Qmq-c1-d93"/>
+                                            <outlet property="delegate" destination="6rj-5U-VFQ" id="QnH-cf-nvl"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jEz-yl-5kV">
@@ -531,10 +537,11 @@
                                         <connections>
                                             <action selector="toTxtBegin:" destination="6rj-5U-VFQ" eventType="editingDidBegin" id="Q6B-De-0YQ"/>
                                             <action selector="toTxtChanged:" destination="6rj-5U-VFQ" eventType="editingChanged" id="hml-xF-Srd"/>
+                                            <outlet property="delegate" destination="6rj-5U-VFQ" id="Fzw-I8-IXZ"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdl-GV-aih">
-                                        <rect key="frame" x="8" y="162" width="309" height="34.333333333333343"/>
+                                        <rect key="frame" x="8" y="166" width="309" height="34.333333333333343"/>
                                         <color key="tintColor" red="0.1764705882" green="0.29411764709999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Search">
@@ -560,6 +567,7 @@
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="BRI-05-zTO"/>
+                                                    <constraint firstAttribute="height" constant="50" id="rZV-oU-uaq"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Today" buttonSize="large">
@@ -596,6 +604,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Bgh-JF-2LL" secondAttribute="trailing" id="pGL-zR-lB4"/>
+                                            <constraint firstAttribute="height" constant="50" id="qNn-JR-jpb"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjO-pj-bWN">
@@ -623,11 +632,10 @@
                                     <constraint firstAttribute="trailing" secondItem="jEz-yl-5kV" secondAttribute="trailing" constant="8" id="MZ6-yY-pG9"/>
                                     <constraint firstItem="jEz-yl-5kV" firstAttribute="top" secondItem="o3p-WD-cc2" secondAttribute="bottom" constant="8" id="PTm-Ay-7aM"/>
                                     <constraint firstItem="EjO-pj-bWN" firstAttribute="top" secondItem="JyH-Sv-uLv" secondAttribute="top" constant="25" id="Qqv-SU-rPT"/>
-                                    <constraint firstAttribute="bottom" secondItem="1Yr-Gq-0q9" secondAttribute="bottom" constant="58" id="UGb-Ay-BAx"/>
-                                    <constraint firstItem="Zdl-GV-aih" firstAttribute="top" secondItem="1Yr-Gq-0q9" secondAttribute="bottom" constant="20" id="VRd-d1-sT0"/>
+                                    <constraint firstItem="Zdl-GV-aih" firstAttribute="top" secondItem="1Yr-Gq-0q9" secondAttribute="bottom" constant="24" id="VRd-d1-sT0"/>
                                     <constraint firstItem="1Yr-Gq-0q9" firstAttribute="leading" secondItem="jEz-yl-5kV" secondAttribute="leading" id="Yw5-J6-N7U"/>
                                     <constraint firstItem="1Yr-Gq-0q9" firstAttribute="top" secondItem="JyH-Sv-uLv" secondAttribute="top" constant="92" id="Zkl-Fw-VGl"/>
-                                    <constraint firstAttribute="height" constant="200" id="beI-6I-abP"/>
+                                    <constraint firstAttribute="height" constant="220" id="beI-6I-abP"/>
                                     <constraint firstItem="1Yr-Gq-0q9" firstAttribute="top" secondItem="jEz-yl-5kV" secondAttribute="bottom" constant="8" id="eXY-nW-4Wi"/>
                                     <constraint firstItem="o3p-WD-cc2" firstAttribute="top" secondItem="JyH-Sv-uLv" secondAttribute="top" constant="8" id="ffM-FZ-rOD"/>
                                     <constraint firstAttribute="trailing" secondItem="Zdl-GV-aih" secondAttribute="trailing" constant="8" id="jRb-rG-gcO"/>
@@ -640,14 +648,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLy-7E-h9B">
+                                <rect key="frame" x="8" y="478" width="359" height="282"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="6rj-5U-VFQ" id="phh-rr-fMX"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="25A-eQ-xfw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YLy-7E-h9B" firstAttribute="leading" secondItem="25A-eQ-xfw" secondAttribute="leading" constant="8" id="356-Ck-Ue6"/>
                             <constraint firstItem="PBT-jI-6he" firstAttribute="top" secondItem="25A-eQ-xfw" secondAttribute="top" id="9AS-s5-p7d"/>
+                            <constraint firstItem="25A-eQ-xfw" firstAttribute="bottom" secondItem="YLy-7E-h9B" secondAttribute="bottom" constant="18" id="DMj-yz-C8h"/>
                             <constraint firstItem="PBT-jI-6he" firstAttribute="trailing" secondItem="25A-eQ-xfw" secondAttribute="trailing" id="M97-mG-GV2"/>
+                            <constraint firstItem="YLy-7E-h9B" firstAttribute="trailing" secondItem="25A-eQ-xfw" secondAttribute="trailing" constant="-8" id="Ta5-Kh-7XL"/>
                             <constraint firstItem="JyH-Sv-uLv" firstAttribute="top" secondItem="25A-eQ-xfw" secondAttribute="top" constant="149" id="U7C-7d-mKK"/>
                             <constraint firstItem="JyH-Sv-uLv" firstAttribute="centerX" secondItem="25A-eQ-xfw" secondAttribute="centerX" id="dqZ-nd-u9V"/>
+                            <constraint firstItem="YLy-7E-h9B" firstAttribute="top" secondItem="JyH-Sv-uLv" secondAttribute="bottom" constant="18" id="ehH-YO-IMw"/>
                             <constraint firstItem="PBT-jI-6he" firstAttribute="leading" secondItem="25A-eQ-xfw" secondAttribute="leading" id="x0V-7l-BTn"/>
                         </constraints>
                     </view>
@@ -655,6 +679,7 @@
                     <connections>
                         <outlet property="datePickerField" destination="tvK-mE-aMW" id="pRB-5U-mb8"/>
                         <outlet property="fromTextField" destination="o3p-WD-cc2" id="nby-Ax-ieq"/>
+                        <outlet property="mapView" destination="YLy-7E-h9B" id="XrX-rG-iqD"/>
                         <outlet property="toTextField" destination="jEz-yl-5kV" id="sVy-FD-srC"/>
                         <outlet property="todayBtn" destination="Zol-zT-60J" id="FGt-e5-4yY"/>
                         <outlet property="tomorrowBtn" destination="Bgh-JF-2LL" id="9iU-6S-qfq"/>
@@ -871,7 +896,6 @@
         <!--Detail Bus View Controller-->
         <scene sceneID="Shb-mS-hdU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pca-jB-wbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="EJo-VV-Nbd" customClass="DetailBusViewController" customModule="BusTicket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="njh-Ta-avG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -1070,6 +1094,7 @@
                         <segue destination="ogD-cY-rxh" kind="show" identifier="toDetailTicketVC" id="DnH-7Q-Yg2"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pca-jB-wbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6012" y="12.561576354679804"/>
         </scene>
@@ -1295,6 +1320,7 @@
                     <connections>
                         <outlet property="pageController" destination="Xwy-wx-One" id="2XI-hP-prf"/>
                         <outlet property="ticketsCollectionView" destination="48Q-bw-aOD" id="QJg-mv-gDn"/>
+                        <segue destination="2UW-fg-x5E" kind="presentation" identifier="toBackFilterTicketVC" modalPresentationStyle="fullScreen" id="KY3-F0-oQd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAx-yl-SEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1321,8 +1347,13 @@
             <point key="canvasLocation" x="3425" y="13"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="7ry-2w-P19"/>
+        <designable name="TTj-4U-8EB"/>
+        <designable name="gJL-uc-dbN"/>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="5fg-mM-49j"/>
+        <segue reference="4zo-Ct-LlB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Frame 3" width="314" height="126"/>

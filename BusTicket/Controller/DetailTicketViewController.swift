@@ -25,7 +25,13 @@ class DetailTicketViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItems = [done]
         pageController.numberOfPages = ticket?.seatCount ?? 1
+    }
+    
+    @objc func addTapped() {
+        performSegue(withIdentifier: "toBackFilterTicketVC", sender: nil)
     }
 }
 
