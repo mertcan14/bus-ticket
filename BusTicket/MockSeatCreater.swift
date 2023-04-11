@@ -32,7 +32,7 @@ class MockSeatCreater {
             let stub = SeatStub(id: UUID().uuidString,
                                 number: seatNumber - totalSpace,
                                 salable: Bool.random(),
-                                gender: Bool.random(),
+                                gender: true,
                                 hall: isHall)
             list.append(stub)
             seatNumber += 1

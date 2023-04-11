@@ -9,13 +9,18 @@ import UIKit
 import MapKit
 
 class FilterTicketViewController: UIViewController {
-    
+
+    // MARK: - IBOutlet Definitions
+    // TODO: - Test
+    // FIXME: - Test 2
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var toTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var todayBtn: UIButton!
     @IBOutlet weak var tomorrowBtn: UIButton!
     @IBOutlet weak var datePickerField: UIDatePicker!
+    
+    // MARK: - Variable Definitions
     
     let cities = [ "Adana", "Adıyaman", "Afyon", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "İçel (Mersin)", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"]
     var filteredCities: [String] = []
@@ -34,10 +39,18 @@ class FilterTicketViewController: UIViewController {
         appearance.configureWithOpaqueBackground()
         appearance.shadowColor = .clear
         appearance.backgroundColor = UIColor(red: 45/255, green: 75/255, blue: 115/255, alpha: 1)
-
+        
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        let logOut = UIBarButtonItem(image: #imageLiteral(resourceName: "logout"), style: .plain, target: self, action: #selector(logOut))
+        logOut.tintColor = .white
+        navigationItem.rightBarButtonItems = [logOut]
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
     
     @IBAction func tomorrowBtnClicked(_ sender: Any) {
@@ -73,9 +86,10 @@ class FilterTicketViewController: UIViewController {
             dateTicket.year = year
             performSegue(withIdentifier: "toTicketListVC", sender: nil)
         }else {
-            print("Girişleri boş bırakamazsınız.")
+            alertFunc("Cities is empty", "You need to fill the city fields.")
         }
     }
+    
     @IBAction func fromTxtChanged(_ sender: Any) {
         if fromTextField.text != "" {
             search(fromTextField.text ?? "")
@@ -95,22 +109,11 @@ class FilterTicketViewController: UIViewController {
         searchCancel()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toTicketListVC" {
-            if let ticketListVC = segue.destination as? TicketListViewController {
-                guard let fromText = fromTextField.text else {
-                    return
-                }
-                guard let toText = toTextField.text else {
-                    return
-                }
-                ticketListVC.dateForTicket = dateTicket
-                ticketListVC.fromForTicket = fromText
-                ticketListVC.toForTicket = toText
-                
-            }
-        }
+    @objc func logOut() {
+        
     }
+    
+    /// asdasd
     func search(_ text: String) {
         filteredCities = cities.filter({ (city:String) -> Bool in
             return city.lowercased().contains(text.lowercased()) ?? false
@@ -118,6 +121,7 @@ class FilterTicketViewController: UIViewController {
         isFiltering = true
         tableView.reloadData()
     }
+    
     func searchCancel() {
         isFiltering = false
         tableView.reloadData()
@@ -195,6 +199,29 @@ class FilterTicketViewController: UIViewController {
             }
         }
     }
+    
+    func alertFunc(_ title: String, _ content: String) {
+        let alert = UIAlertController(title: title, message: content, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTicketListVC" {
+            if let ticketListVC = segue.destination as? TicketListViewController {
+                guard let fromText = fromTextField.text else {
+                    return
+                }
+                guard let toText = toTextField.text else {
+                    return
+                }
+                ticketListVC.dateForTicket = dateTicket
+                ticketListVC.fromForTicket = fromText
+                ticketListVC.toForTicket = toText
+                
+            }
+        }
+    }
 }
 
 extension FilterTicketViewController: UITextFieldDelegate {
@@ -238,7 +265,7 @@ extension FilterTicketViewController: UITextFieldDelegate {
                     }
                 }
             }
-
+            
         }
     }
 }
@@ -252,6 +279,7 @@ extension FilterTicketViewController: UITableViewDelegate, UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "selectCity")
+        cell.backgroundColor = UIColor(red: 153.0 / 255.0, green: 180.0 / 255.0, blue: 191.0/255.0, alpha: 0.5)
         if isFiltering {
             cell.textLabel?.text = filteredCities[indexPath.row]
         }else {
@@ -281,7 +309,7 @@ extension FilterTicketViewController: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         guard let currentRoute = currentRoute else { return MKOverlayRenderer() }
         let polyLineRenderer = MKPolylineRenderer(polyline: currentRoute.polyline)
-        polyLineRenderer.strokeColor = .purple
+        polyLineRenderer.strokeColor = UIColor(red: 191.0 / 255.0, green: 141.0 / 255.0, blue: 48.0/255.0, alpha: 1.0)
         polyLineRenderer.lineWidth = 4
         return polyLineRenderer
     }

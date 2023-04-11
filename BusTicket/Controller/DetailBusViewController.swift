@@ -51,17 +51,8 @@ class DetailBusViewController: UIViewController {
         priceLabel.text = busInfo.price
         timeLabel.text = busInfo.time
         changeUser()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        let vW = view.frame.width
-        seatView?.frame = CGRect(x: 0, y: 130, width: vW, height: 225)
-    }
-    
+    }    
     @IBAction func buyBtnClicked(_ sender: Any) {
-//        let popUpScreen = FormPassengerPopUp()
-//        popUpScreen.appear(sender: self)
         if !selectedSeats.isEmpty {
             if !registeredUserSwitch.isOn {
                 

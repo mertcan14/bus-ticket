@@ -139,23 +139,24 @@ class ALSelectionTooltip: UIView {
     }
     
     func show(from view: UIView, origin: CGPoint, animated: Bool = true) {
-        fromView = view
-        let coorY = origin.y - (frame.height / 2)
-        center = CGPoint(x: origin.x, y: coorY)
-        view.clipsToBounds = false
-        
-        if !animated {
-            view.addSubview(self)
-            self.isVisible = true
-            return
-        }
-        
-        self.alpha = 0.0
-        view.addSubview(self)
-        UIView.animate(withDuration: animateDuration, animations: {
-            self.alpha = 1.0
-            self.isVisible = true
-        })
+        selectionHandler?(.man)
+//        fromView = view
+//        let coorY = origin.y - (frame.height / 2)
+//        center = CGPoint(x: origin.x, y: coorY)
+//        view.clipsToBounds = false
+//        
+//        if !animated {
+//            view.addSubview(self)
+//            self.isVisible = true
+//            return
+//        }
+//        
+//        self.alpha = 0.0
+//        view.addSubview(self)
+//        UIView.animate(withDuration: animateDuration, animations: {
+//            self.alpha = 1.0
+//            self.isVisible = true
+//        })
     }
     
     func hide(animated: Bool = true) {
