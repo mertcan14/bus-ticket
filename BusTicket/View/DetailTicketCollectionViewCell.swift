@@ -20,16 +20,17 @@ class DetailTicketCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var placeArrival: UILabel!
     @IBOutlet weak var placeDeparture: UILabel!
     
-    func setup(_ ticket: Ticket, seatNumber: String) {
-        arrivalTime.text = "\(ticket.time.hour):\(ticket.time.minute)"
-        departureTime.text = "\(ticket.time.hour):\(ticket.time.minute)"
+    func setup(_ ticket: Ticket, seatNumber: String, busInfo: BusInfo) {
+        arrivalTime.text = "\(busInfo.arrivalTime ?? "")"
+        departureTime.text = "\(busInfo.depatureTime ?? "")"
+        
         arrivalDate.text = "\(ticket.date.day)/\(ticket.date.month)/\(ticket.date.year)"
         departureDate.text = "\(ticket.date.day)/\(ticket.date.month)/\(ticket.date.year)"
         busID.text = "28388373"
-        busBrand.text = "Kamil Koç"
+        busBrand.text = "\(busInfo.brand ?? "")"
         seatNo.text = seatNumber
         passengerName.text = "\(ticket.passenger.firstName) \(ticket.passenger.lastName)"
-        placeArrival.text = "Ankara"
-        placeDeparture.text = "Bolu"
+        placeArrival.text = "\(busInfo.toLabel ?? "")"
+        placeDeparture.text = "\(busInfo.fromLabel ?? "")"
     }
 }

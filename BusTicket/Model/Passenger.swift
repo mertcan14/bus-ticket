@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Passenger {
+struct Passenger: Codable {
     var id: Int = 0
     var firstName: String = "İsimsiz"
     var lastName: String = "İsimsiz"

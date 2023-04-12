@@ -11,8 +11,6 @@ import MapKit
 class FilterTicketViewController: UIViewController {
 
     // MARK: - IBOutlet Definitions
-    // TODO: - Test
-    // FIXME: - Test 2
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var toTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
@@ -21,7 +19,6 @@ class FilterTicketViewController: UIViewController {
     @IBOutlet weak var datePickerField: UIDatePicker!
     
     // MARK: - Variable Definitions
-    
     let cities = [ "Adana", "Adıyaman", "Afyon", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "İçel (Mersin)", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"]
     var filteredCities: [String] = []
     var dateTicket: DateTicket = DateTicket()
@@ -47,12 +44,9 @@ class FilterTicketViewController: UIViewController {
         let logOut = UIBarButtonItem(image: #imageLiteral(resourceName: "logout"), style: .plain, target: self, action: #selector(logOut))
         logOut.tintColor = .white
         navigationItem.rightBarButtonItems = [logOut]
-        setNeedsStatusBarAppearanceUpdate()
+        UIApplication.shared.statusBarStyle = .lightContent
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
-    
+    // MARK: IBAction methods
     @IBAction func tomorrowBtnClicked(_ sender: Any) {
         todayBtn.isEnabled = true
         todayBtn.backgroundColor = .clear
@@ -62,6 +56,7 @@ class FilterTicketViewController: UIViewController {
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())
         datePickerField.date = tomorrow ?? Date()
     }
+    
     @IBAction func todayBtnClicked(_ sender: Any) {
         todayBtn.isEnabled = false
         todayBtn.backgroundColor = .white
@@ -70,11 +65,13 @@ class FilterTicketViewController: UIViewController {
         tomorrowBtn.backgroundColor = .clear
         datePickerField.date = Date()
     }
+    
     @IBAction func changeTextFieldBtnClicked(_ sender: Any) {
         let changeValue = fromTextField.text
         fromTextField.text = toTextField.text
         toTextField.text = changeValue
     }
+    
     @IBAction func searchBtnClicked(_ sender: Any) {
         if fromTextField.text != "" && toTextField.text != "" {
             let components = Calendar.current.dateComponents([.day, .month, .year], from: datePickerField.date)
@@ -95,39 +92,43 @@ class FilterTicketViewController: UIViewController {
             search(fromTextField.text ?? "")
         }
     }
+    
     @IBAction func toTxtChanged(_ sender: Any) {
         if toTextField.text != "" {
             search(toTextField.text ?? "")
         }
     }
+    
     @IBAction func fromTxtBegin(_ sender: Any) {
         currentTxtField = 1
         searchCancel()
     }
+    
     @IBAction func toTxtBegin(_ sender: Any) {
         currentTxtField = 2
         searchCancel()
     }
     
-    @objc func logOut() {
+    // MARK: Search Methods
         
-    }
-    
-    /// asdasd
+    /// Filters data in cities and assigns it to filteredCities
     func search(_ text: String) {
         filteredCities = cities.filter({ (city:String) -> Bool in
-            return city.lowercased().contains(text.lowercased()) ?? false
+            return city.lowercased().contains(text.lowercased())
         })
         isFiltering = true
         tableView.reloadData()
     }
-    
+    /// Isfiltering assigns false and table data is cities
     func searchCancel() {
         isFiltering = false
         tableView.reloadData()
     }
-    func createMapPin() {
+    // MARK: Mapkit Methods
+    /// Create pin on map view
+    private func createMapPin() {
         let request = MKLocalSearch.Request()
+        // if annotations count is 2, add two text fields data to mapview
         if self.mapView.annotations.count == 2 {
             let requestLast = MKLocalSearch.Request()
             request.naturalLanguageQuery = fromTextField.text
@@ -146,6 +147,7 @@ class FilterTicketViewController: UIViewController {
             activatedSearchRequest(activeSearch,toTextField.text ?? "")
         }
     }
+    /// map-based searches and processing the results.
     private func activatedSearchRequest(_ request: MKLocalSearch, _ text:String) {
         request.start { response, error in
             if error != nil {
@@ -177,6 +179,7 @@ class FilterTicketViewController: UIViewController {
             }
         }
     }
+    /// map-based directions and processing the results.
     func constructRoute() {
         let directionRequest = MKDirections.Request()
         guard let firstCoordinate = self.destinations.first?.coordinate else { return }
@@ -205,7 +208,7 @@ class FilterTicketViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
         self.present(alert, animated: true)
     }
-    
+    /// pass data to TicketListVC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTicketListVC" {
             if let ticketListVC = segue.destination as? TicketListViewController {
@@ -218,15 +221,19 @@ class FilterTicketViewController: UIViewController {
                 ticketListVC.dateForTicket = dateTicket
                 ticketListVC.fromForTicket = fromText
                 ticketListVC.toForTicket = toText
-                
             }
         }
     }
+    
+    @objc func logOut() {
+        UserDefaults().removeObject(forKey: "Passenger")
+        performSegue(withIdentifier: "logout", sender: nil)
+    }
 }
-
+// MARK: Text Field Delegate Extension
 extension FilterTicketViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        tabalViewSetup()
+        tableViewSetup()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tag = 18
@@ -240,7 +247,7 @@ extension FilterTicketViewController: UITextFieldDelegate {
         }
         return true
     }
-    func tabalViewSetup() {
+    func tableViewSetup() {
         tableView.frame = CGRect(x: 20, y: view.frame.height, width: view.frame.width - 40, height: view.frame.height - 170)
         tableView.layer.shadowColor = UIColor.darkGray.cgColor
         tableView.layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -269,7 +276,7 @@ extension FilterTicketViewController: UITextFieldDelegate {
         }
     }
 }
-
+// MARK: Table View Delegate, Data Source Extension
 extension FilterTicketViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
@@ -304,7 +311,7 @@ extension FilterTicketViewController: UITableViewDelegate, UITableViewDataSource
         createMapPin()
     }
 }
-
+// MARK: Map View Delegate Extension
 extension FilterTicketViewController: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         guard let currentRoute = currentRoute else { return MKOverlayRenderer() }

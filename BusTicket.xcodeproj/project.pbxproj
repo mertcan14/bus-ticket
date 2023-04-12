@@ -19,6 +19,7 @@
 		E5977D4729DCEFB000E35793 /* TimeTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4629DCEFB000E35793 /* TimeTicket.swift */; };
 		E5994BCB29E44FBE005B36E7 /* FormPassengerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5994BC929E44FBE005B36E7 /* FormPassengerPopUp.swift */; };
 		E5994BCC29E44FBE005B36E7 /* FormPassengerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5994BCA29E44FBE005B36E7 /* FormPassengerPopUp.xib */; };
+		E599EC0B29E6C4B4009D64FF /* notfound.json in Resources */ = {isa = PBXBuildFile; fileRef = E599EC0A29E6C4B4009D64FF /* notfound.json */; };
 		E5A1AD6729DEE53300765E01 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */; };
 		E5A1AD6929DEE64200765E01 /* BusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6829DEE64200765E01 /* BusInfo.swift */; };
 		E5A1AD6B29DF176B00765E01 /* DetailBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */; };
@@ -59,6 +60,7 @@
 		E5977D4629DCEFB000E35793 /* TimeTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTicket.swift; sourceTree = "<group>"; };
 		E5994BC929E44FBE005B36E7 /* FormPassengerPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPassengerPopUp.swift; sourceTree = "<group>"; };
 		E5994BCA29E44FBE005B36E7 /* FormPassengerPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormPassengerPopUp.xib; sourceTree = "<group>"; };
+		E599EC0A29E6C4B4009D64FF /* notfound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notfound.json; sourceTree = "<group>"; };
 		E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 		E5A1AD6829DEE64200765E01 /* BusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusInfo.swift; sourceTree = "<group>"; };
 		E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBusViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		E591FCB529DA4887003A43EC /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				E599EC0A29E6C4B4009D64FF /* notfound.json */,
 				E596D07829E301BE004F9524 /* success.json */,
 				E5DCB52229DB17E4000AC687 /* 114386-welcome.json */,
 				E5DCB52029DB17B9000AC687 /* 99863-welcome.json */,
@@ -280,6 +283,7 @@
 			files = (
 				E5D1622829DAEB190031BFB8 /* world.json in Resources */,
 				E596D07929E301BE004F9524 /* success.json in Resources */,
+				E599EC0B29E6C4B4009D64FF /* notfound.json in Resources */,
 				E5CE93B529D9047400C916CF /* LaunchScreen.storyboard in Resources */,
 				E5994BCC29E44FBE005B36E7 /* FormPassengerPopUp.xib in Resources */,
 				E5CE93B229D9047400C916CF /* Assets.xcassets in Resources */,
@@ -514,11 +518,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BusTicket/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Better Ticket";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,11 +548,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BusTicket/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Better Ticket";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

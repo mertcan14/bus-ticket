@@ -40,6 +40,8 @@ class TicketListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailBusVC" {
             if let detailBusInfoVC = segue.destination as? DetailBusViewController {
+                self.busInfo.fromLabel = fromLabel.text
+                self.busInfo.toLabel = toLabel.text
                 detailBusInfoVC.busInfo = self.busInfo
                 detailBusInfoVC.dateForTicket = self.dateForTicket
             }

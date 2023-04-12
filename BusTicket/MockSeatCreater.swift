@@ -17,26 +17,53 @@ struct SeatStub {
 
 class MockSeatCreater {
     
-    func create(count: Int) -> [SeatStub] {
+    func create(count: Int, type: String) -> [SeatStub] {
         var list = [SeatStub]()
         var seatNumber = 1
         var totalSpace = 0
-        while seatNumber-totalSpace != count+1 {
-            var isHall = (seatNumber - 2) % 5 == 1
-            if (seatNumber - totalSpace + 5) > count {
-                isHall = false
+        var emptySeat: Bool = false
+        if type == "2+2" {
+            while seatNumber-totalSpace != count+1 {
+                var isHall = (seatNumber - 2) % 5 == 1
+                if (seatNumber - totalSpace + 5) > count {
+                    isHall = false
+                }
+                if isHall {
+                    totalSpace += 1
+                }
+                let stub = SeatStub(id: UUID().uuidString,
+                                    number: seatNumber - totalSpace,
+                                    salable: Bool.random(),
+                                    gender: true,
+                                    hall: isHall)
+                list.append(stub)
+                seatNumber += 1
             }
-            if isHall {
-                totalSpace += 1
+        }else {
+            while seatNumber-totalSpace != count+1 {
+                var isHall = (seatNumber - 1) % 5 == 1
+                if isHall {
+                    totalSpace += 2
+                    
+                    let stub = SeatStub(id: UUID().uuidString,
+                                        number: seatNumber - totalSpace,
+                                        salable: Bool.random(),
+                                        gender: true,
+                                        hall: isHall)
+                    list.append(stub)
+                    seatNumber += 1
+                }
+                
+                let stub = SeatStub(id: UUID().uuidString,
+                                    number: seatNumber - totalSpace,
+                                    salable: Bool.random(),
+                                    gender: true,
+                                    hall: isHall)
+                list.append(stub)
+                seatNumber += 1
             }
-            let stub = SeatStub(id: UUID().uuidString,
-                                number: seatNumber - totalSpace,
-                                salable: Bool.random(),
-                                gender: true,
-                                hall: isHall)
-            list.append(stub)
-            seatNumber += 1
         }
+        
         return list
     }
     

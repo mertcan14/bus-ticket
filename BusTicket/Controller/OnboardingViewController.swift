@@ -24,12 +24,12 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         slides = [
-                    OnboardingSlide(title: "En Rekabetçi Fiyat Garantisi",
-                                    description: "Better Ticket size tüm firmaların otobüs biletlerini sorgulama ve karşılaştırma imkanı sunar. Sizlere özel indirimleri ve bütçenize uygun biletleri anında erişebilirsiniz.", image: "ticket"),
-                    OnboardingSlide(title: "En Seçkin Firmalar",
-                                    description: "Better Ticket olarak en seçkin otobüs firmalarını sizler için bir araya topladık. Tüm firmaların otobüs biletlerini Better Ticket'da karşılaştırabilir, uygun otobüs biletini bulabilir ve online alabilirsiniz.", image: "bus"),
-                    OnboardingSlide(title: "Dünyanın Her Noktasına Ulaşım",
-                                    description: "208 Ülke \n 100.000+ Durak \n ile siz değerli kullanıcılarmıza sunmaktayız.", image: "world"),
+                    OnboardingSlide(title: "Cheapest Price",
+                                    description: "Better Ticket offers you the opportunity to query and compare bus tickets of all companies. You can instantly access special discounts and tickets suitable for your budget.", image: "ticket"),
+                    OnboardingSlide(title: "Distinguished Companies",
+                                    description: "As Better Ticket, we have gathered the most exclusive bus companies for you. On Better Ticket, you can compare bus tickets of all companies, find the bus ticket that suits you and buy it online.", image: "bus"),
+                    OnboardingSlide(title: "Transportation to Every Point",
+                                    description: "208 Country \n 100.000+ Station \n We present it to our valuable users.", image: "world"),
                 ]
         collectionView.contentInsetAdjustmentBehavior = .never
     }

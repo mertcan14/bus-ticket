@@ -15,7 +15,7 @@ class DetailBusViewController: UIViewController {
     var dateForTicket: DateTicket = DateTicket()
     var ticket: Ticket?
     
-    var user: Passenger = Passenger(id: 1, firstName: "Mertcan", lastName: "Yaman")
+    var user: Passenger = Passenger()
     
     @IBOutlet weak var formView: UIView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -35,12 +35,27 @@ class DetailBusViewController: UIViewController {
         seatView.config = ExampleSeatConfig()
         seatView?.delegate = dataManager
         seatView?.dataSource = dataManager
-        let first = MockSeatCreater().create(count: 45)
+        let typeBus: String = String(busInfo.content?.split(separator: " ").last ?? "2+2")
+        
+        let first = MockSeatCreater().create(count: 45, type: typeBus)
         dataManager.seatList = [first]
         seatView?.reload()
         
         NotificationCenter.default.addObserver(self, selector: #selector(alertMaxSelected), name: Notification.Name(rawValue: "maxSelected"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeSelectedSeat(_:)), name: Notification.Name(rawValue: "selectedSeat"), object: nil)
+        
+        if let data = UserDefaults.standard.data(forKey: "Passenger") {
+            do {
+                // Create JSON Decoder
+                let decoder = JSONDecoder()
+
+                // Decode Note
+                self.user = try decoder.decode(Passenger.self, from: data)
+
+            } catch {
+                print("Unable to Decode Notes (\(error))")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,8 +75,10 @@ class DetailBusViewController: UIViewController {
                 user.lastName = lastNameTxtField.text ?? ""
                 user.id = Int(tcNoTxtField.text ?? "0") ?? 0
             }
-            var timeTicket = timeConvertInt(busInfo.depatureTime!)
-            ticket = Ticket(passenger: user, date: dateForTicket, time: timeTicket)
+            let timeTicket = timeConvertInt(busInfo.depatureTime!)
+            let id = Int(tcNoTxtField.text!) ?? 0
+            let passenger: Passenger = Passenger(id: id, firstName: firstNameTxtField.text!, lastName: lastNameTxtField.text!)
+            ticket = Ticket(passenger: passenger, date: dateForTicket, time: timeTicket)
             ticket?.reserveSeat(selectedSeats.count)
             for selectedSeat in selectedSeats {
                 ticket?.addSeat(selectedSeat.number)
@@ -75,6 +92,7 @@ class DetailBusViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailTicketVC" {
             if let detailTicketVC = segue.destination as? DetailTicketViewController {
+                detailTicketVC.busInfo = busInfo
                 detailTicketVC.ticket = ticket
             }
         }

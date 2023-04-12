@@ -13,6 +13,7 @@ class DetailTicketViewController: UIViewController {
     @IBOutlet weak var ticketsCollectionView: UICollectionView!
     @IBOutlet weak var pageController: UIPageControl!
     
+    var busInfo: BusInfo = BusInfo()
     var ticket: Ticket?
     var currentPage = 0 {
         didSet {
@@ -25,12 +26,12 @@ class DetailTicketViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let done = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(addTapped))
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         navigationItem.rightBarButtonItems = [done]
         pageController.numberOfPages = ticket?.seatCount ?? 1
     }
     
-    @objc func addTapped() {
+    @objc func done() {
         performSegue(withIdentifier: "toBackFilterTicketVC", sender: nil)
     }
 }
@@ -42,9 +43,9 @@ extension DetailTicketViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailTicketCell", for: indexPath) as! DetailTicketCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailTicketCell", for: indexPath) as! DetailTicketCollectionViewCell
         guard let myTicket = ticket else { fatalError("Ticket is nil") }
-        cell.setup(myTicket, seatNumber: String(myTicket.seat[indexPath.row]))
+        cell.setup(myTicket, seatNumber: String(myTicket.seat[indexPath.row]), busInfo: busInfo)
         return cell
     }
     

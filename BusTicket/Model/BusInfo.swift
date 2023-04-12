@@ -14,4 +14,6 @@ struct BusInfo {
     var arrivalTime: String?
     var time: String?
     var price: String?
+    var fromLabel: String?
+    var toLabel: String?
 }
