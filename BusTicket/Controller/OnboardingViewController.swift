@@ -10,10 +10,11 @@ import Lottie
 
 class OnboardingViewController: UIViewController {
 
-    
+    // MARK: - IBOutlet Definitions
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: - Variable Definitions
     var slides: [OnboardingSlide] = []
     var currentPage = 0 {
         didSet {
@@ -44,7 +45,7 @@ class OnboardingViewController: UIViewController {
         }
     }
 }
-
+// MARK: Collection View Delegate Extension
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         slides.count

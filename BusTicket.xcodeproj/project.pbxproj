@@ -11,15 +11,14 @@
 		E591FCB729DA4891003A43EC /* bus.json in Resources */ = {isa = PBXBuildFile; fileRef = E591FCB629DA4891003A43EC /* bus.json */; };
 		E595222F29E36A4500134311 /* DetailTicketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E595222E29E36A4500134311 /* DetailTicketCollectionViewCell.swift */; };
 		E596D07729E2F000004F9524 /* DetailTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596D07629E2F000004F9524 /* DetailTicketViewController.swift */; };
-		E596D07929E301BE004F9524 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = E596D07829E301BE004F9524 /* success.json */; };
 		E5977D3F29DCEC6500E35793 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D3E29DCEC6500E35793 /* Ticket.swift */; };
 		E5977D4129DCEC8E00E35793 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4029DCEC8E00E35793 /* Passenger.swift */; };
 		E5977D4329DCED6300E35793 /* FilterTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4229DCED6300E35793 /* FilterTicketViewController.swift */; };
 		E5977D4529DCEE6500E35793 /* DateTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4429DCEE6500E35793 /* DateTicket.swift */; };
 		E5977D4729DCEFB000E35793 /* TimeTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4629DCEFB000E35793 /* TimeTicket.swift */; };
-		E5994BCB29E44FBE005B36E7 /* FormPassengerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5994BC929E44FBE005B36E7 /* FormPassengerPopUp.swift */; };
+		E5994BCB29E44FBE005B36E7 /* SuccessPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5994BC929E44FBE005B36E7 /* SuccessPopUp.swift */; };
 		E5994BCC29E44FBE005B36E7 /* FormPassengerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5994BCA29E44FBE005B36E7 /* FormPassengerPopUp.xib */; };
-		E599EC0B29E6C4B4009D64FF /* notfound.json in Resources */ = {isa = PBXBuildFile; fileRef = E599EC0A29E6C4B4009D64FF /* notfound.json */; };
+		E599EC0F29E6E727009D64FF /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = E599EC0E29E6E727009D64FF /* success.json */; };
 		E5A1AD6729DEE53300765E01 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */; };
 		E5A1AD6929DEE64200765E01 /* BusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6829DEE64200765E01 /* BusInfo.swift */; };
 		E5A1AD6B29DF176B00765E01 /* DetailBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */; };
@@ -36,9 +35,6 @@
 		E5D1622A29DAF3580031BFB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1622929DAF3580031BFB8 /* LoginViewController.swift */; };
 		E5D1622C29DAF4F60031BFB8 /* welcome.json in Resources */ = {isa = PBXBuildFile; fileRef = E5D1622B29DAF4F60031BFB8 /* welcome.json */; };
 		E5DCB51D29DB160D000AC687 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCB51C29DB160D000AC687 /* SignUpViewController.swift */; };
-		E5DCB51F29DB1787000AC687 /* pinkwelcome.json in Resources */ = {isa = PBXBuildFile; fileRef = E5DCB51E29DB1787000AC687 /* pinkwelcome.json */; };
-		E5DCB52129DB17B9000AC687 /* 99863-welcome.json in Resources */ = {isa = PBXBuildFile; fileRef = E5DCB52029DB17B9000AC687 /* 99863-welcome.json */; };
-		E5DCB52329DB17E4000AC687 /* 114386-welcome.json in Resources */ = {isa = PBXBuildFile; fileRef = E5DCB52229DB17E4000AC687 /* 114386-welcome.json */; };
 		E5E5CCA129D9C6050078B1BD /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5CCA029D9C6050078B1BD /* OnboardingViewController.swift */; };
 		E5E5CCA429D9C7CC0078B1BD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5CCA329D9C7CC0078B1BD /* UIView+Extension.swift */; };
 		E5E5CCA629D9CDF20078B1BD /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5CCA529D9CDF20078B1BD /* OnboardingSlide.swift */; };
@@ -52,15 +48,14 @@
 		E591FCB629DA4891003A43EC /* bus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bus.json; sourceTree = "<group>"; };
 		E595222E29E36A4500134311 /* DetailTicketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketCollectionViewCell.swift; sourceTree = "<group>"; };
 		E596D07629E2F000004F9524 /* DetailTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketViewController.swift; sourceTree = "<group>"; };
-		E596D07829E301BE004F9524 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		E5977D3E29DCEC6500E35793 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		E5977D4029DCEC8E00E35793 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
 		E5977D4229DCED6300E35793 /* FilterTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTicketViewController.swift; sourceTree = "<group>"; };
 		E5977D4429DCEE6500E35793 /* DateTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTicket.swift; sourceTree = "<group>"; };
 		E5977D4629DCEFB000E35793 /* TimeTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTicket.swift; sourceTree = "<group>"; };
-		E5994BC929E44FBE005B36E7 /* FormPassengerPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPassengerPopUp.swift; sourceTree = "<group>"; };
+		E5994BC929E44FBE005B36E7 /* SuccessPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPopUp.swift; sourceTree = "<group>"; };
 		E5994BCA29E44FBE005B36E7 /* FormPassengerPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormPassengerPopUp.xib; sourceTree = "<group>"; };
-		E599EC0A29E6C4B4009D64FF /* notfound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notfound.json; sourceTree = "<group>"; };
+		E599EC0E29E6E727009D64FF /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = success.json; path = ../../../../Downloads/success.json; sourceTree = "<group>"; };
 		E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 		E5A1AD6829DEE64200765E01 /* BusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusInfo.swift; sourceTree = "<group>"; };
 		E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBusViewController.swift; sourceTree = "<group>"; };
@@ -79,9 +74,6 @@
 		E5D1622929DAF3580031BFB8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E5D1622B29DAF4F60031BFB8 /* welcome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = welcome.json; sourceTree = "<group>"; };
 		E5DCB51C29DB160D000AC687 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		E5DCB51E29DB1787000AC687 /* pinkwelcome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pinkwelcome.json; sourceTree = "<group>"; };
-		E5DCB52029DB17B9000AC687 /* 99863-welcome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "99863-welcome.json"; sourceTree = "<group>"; };
-		E5DCB52229DB17E4000AC687 /* 114386-welcome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "114386-welcome.json"; sourceTree = "<group>"; };
 		E5E5CCA029D9C6050078B1BD /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E5E5CCA329D9C7CC0078B1BD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E5E5CCA529D9CDF20078B1BD /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -122,17 +114,23 @@
 		E591FCB529DA4887003A43EC /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				E599EC0A29E6C4B4009D64FF /* notfound.json */,
-				E596D07829E301BE004F9524 /* success.json */,
-				E5DCB52229DB17E4000AC687 /* 114386-welcome.json */,
-				E5DCB52029DB17B9000AC687 /* 99863-welcome.json */,
-				E5DCB51E29DB1787000AC687 /* pinkwelcome.json */,
+				E599EC0E29E6E727009D64FF /* success.json */,
 				E5D1622B29DAF4F60031BFB8 /* welcome.json */,
 				E5D1622729DAEB190031BFB8 /* world.json */,
 				E5F2C00E29DA569B00AC481C /* ticket.json */,
 				E591FCB629DA4891003A43EC /* bus.json */,
 			);
 			path = Asset;
+			sourceTree = "<group>";
+		};
+		E599EC1029E6EE64009D64FF /* BusView */ = {
+			isa = PBXGroup;
+			children = (
+				E5A1AD6C29DF22C200765E01 /* SeatDataManager.swift */,
+				E5A1AD6E29DF22F100765E01 /* MockSeatCreater.swift */,
+				E5A1AD7029DF237800765E01 /* ExampleSeatConfig.swift */,
+			);
+			path = BusView;
 			sourceTree = "<group>";
 		};
 		E5CE939C29D9047300C916CF = {
@@ -156,6 +154,7 @@
 		E5CE93A729D9047300C916CF /* BusTicket */ = {
 			isa = PBXGroup;
 			children = (
+				E599EC1029E6EE64009D64FF /* BusView */,
 				E591FCB529DA4887003A43EC /* Asset */,
 				E5E5CCA229D9C7A60078B1BD /* Extension */,
 				E5CE93BE29D9052800C916CF /* Controller */,
@@ -167,9 +166,6 @@
 				E5CE93B129D9047400C916CF /* Assets.xcassets */,
 				E5CE93B329D9047400C916CF /* LaunchScreen.storyboard */,
 				E5CE93B629D9047400C916CF /* Info.plist */,
-				E5A1AD6C29DF22C200765E01 /* SeatDataManager.swift */,
-				E5A1AD6E29DF22F100765E01 /* MockSeatCreater.swift */,
-				E5A1AD7029DF237800765E01 /* ExampleSeatConfig.swift */,
 			);
 			path = BusTicket;
 			sourceTree = "<group>";
@@ -193,7 +189,7 @@
 				E5E5CCA729D9CE480078B1BD /* OnboardingCollectionViewCell.swift */,
 				E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */,
 				E595222E29E36A4500134311 /* DetailTicketCollectionViewCell.swift */,
-				E5994BC929E44FBE005B36E7 /* FormPassengerPopUp.swift */,
+				E5994BC929E44FBE005B36E7 /* SuccessPopUp.swift */,
 				E5994BCA29E44FBE005B36E7 /* FormPassengerPopUp.xib */,
 			);
 			path = View;
@@ -282,17 +278,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5D1622829DAEB190031BFB8 /* world.json in Resources */,
-				E596D07929E301BE004F9524 /* success.json in Resources */,
-				E599EC0B29E6C4B4009D64FF /* notfound.json in Resources */,
 				E5CE93B529D9047400C916CF /* LaunchScreen.storyboard in Resources */,
 				E5994BCC29E44FBE005B36E7 /* FormPassengerPopUp.xib in Resources */,
 				E5CE93B229D9047400C916CF /* Assets.xcassets in Resources */,
-				E5DCB52329DB17E4000AC687 /* 114386-welcome.json in Resources */,
+				E599EC0F29E6E727009D64FF /* success.json in Resources */,
 				E5F2C00F29DA569B00AC481C /* ticket.json in Resources */,
-				E5DCB52129DB17B9000AC687 /* 99863-welcome.json in Resources */,
 				E591FCB729DA4891003A43EC /* bus.json in Resources */,
 				E5D1622C29DAF4F60031BFB8 /* welcome.json in Resources */,
-				E5DCB51F29DB1787000AC687 /* pinkwelcome.json in Resources */,
 				E5CE93B029D9047300C916CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,7 +360,7 @@
 				E5977D4729DCEFB000E35793 /* TimeTicket.swift in Sources */,
 				E5A1AD6929DEE64200765E01 /* BusInfo.swift in Sources */,
 				E5E5CCA829D9CE480078B1BD /* OnboardingCollectionViewCell.swift in Sources */,
-				E5994BCB29E44FBE005B36E7 /* FormPassengerPopUp.swift in Sources */,
+				E5994BCB29E44FBE005B36E7 /* SuccessPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

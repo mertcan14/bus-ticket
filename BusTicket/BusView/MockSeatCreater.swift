@@ -21,7 +21,6 @@ class MockSeatCreater {
         var list = [SeatStub]()
         var seatNumber = 1
         var totalSpace = 0
-        var emptySeat: Bool = false
         if type == "2+2" {
             while seatNumber-totalSpace != count+1 {
                 var isHall = (seatNumber - 2) % 5 == 1
@@ -39,9 +38,9 @@ class MockSeatCreater {
                 list.append(stub)
                 seatNumber += 1
             }
-        }else {
+        }else {
             while seatNumber-totalSpace != count+1 {
-                var isHall = (seatNumber - 1) % 5 == 1
+                let isHall = (seatNumber - 1) % 5 == 1
                 if isHall {
                     totalSpace += 2
                     
@@ -63,7 +62,10 @@ class MockSeatCreater {
                 seatNumber += 1
             }
         }
-        
+        let soldSeat = list.filter { seat in
+            return !seat.salable
+        }
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "soldSeatList"), object: soldSeat)
         return list
     }
     

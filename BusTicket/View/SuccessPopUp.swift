@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Lottie
 
-class FormPassengerPopUp: UIViewController {
+class SuccessPopUp: UIViewController {
 
+    @IBOutlet weak var animationView: LottieAnimationView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var backView: UIView!
-    init() {
+    init() {
         super.init(nibName: "FormPassengerPopUp", bundle: nil)
         self.modalPresentationStyle = .overFullScreen
     }
@@ -23,6 +25,10 @@ class FormPassengerPopUp: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        animationView.play()
     }
     
     func configView() {
@@ -58,5 +64,6 @@ class FormPassengerPopUp: UIViewController {
     
     @IBAction func doneBtnClicked(_ sender: Any) {
         hide()
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "paymenySuccess"), object: nil)
     }
 }

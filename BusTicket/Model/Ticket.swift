@@ -29,7 +29,7 @@ struct Ticket {
     }
     
     mutating func reserveSeat(_ seatCount: Int) {
-        if self.seatCount != 0 {
+        if self.seatCount != 0 {
             return
         }
         self.seatCount = seatCount

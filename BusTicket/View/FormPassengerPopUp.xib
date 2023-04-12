@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FormPassengerPopUp" customModule="BusTicket" customModuleProvider="target">
             <connections>
+                <outlet property="animationView" destination="IuT-y4-E8n" id="Dj6-0N-7f3"/>
                 <outlet property="backView" destination="iG5-sO-c9Z" id="UHW-j5-GiG"/>
                 <outlet property="contentView" destination="gb2-VJ-gnZ" id="Adc-rg-QEf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -25,31 +26,43 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gb2-VJ-gnZ" userLabel="ContentView">
-                    <rect key="frame" x="24" y="203.66666666666663" width="342" height="450"/>
+                    <rect key="frame" x="24" y="253.66666666666663" width="342" height="350"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MERTCAN YAMAN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIA-yB-VbF">
-                            <rect key="frame" x="100" y="214.33333333333334" width="142" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imo-Fv-tvD">
-                            <rect key="frame" x="12" y="407" width="318" height="35"/>
+                            <rect key="frame" x="12" y="288" width="318" height="37"/>
+                            <color key="tintColor" red="0.1764705882" green="0.29411764709999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Done"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Show Tickets">
+                                <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                <color key="baseBackgroundColor" red="0.1764705882" green="0.29411764709999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="doneBtnClicked:" destination="-1" eventType="touchUpInside" id="3ER-yr-wFA"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IuT-y4-E8n" customClass="LottieAnimationView" customModule="Lottie">
+                            <rect key="frame" x="24" y="22.000000000000028" width="294" height="206"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="success"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="HIA-yB-VbF" firstAttribute="centerY" secondItem="gb2-VJ-gnZ" secondAttribute="centerY" id="3p4-Hh-XKE"/>
-                        <constraint firstItem="HIA-yB-VbF" firstAttribute="centerX" secondItem="gb2-VJ-gnZ" secondAttribute="centerX" id="6sM-Ld-ZLx"/>
-                        <constraint firstAttribute="trailing" secondItem="imo-Fv-tvD" secondAttribute="trailing" constant="12" id="LRD-8B-wts"/>
-                        <constraint firstAttribute="height" constant="450" id="Q85-IR-pGa"/>
-                        <constraint firstAttribute="bottom" secondItem="imo-Fv-tvD" secondAttribute="bottom" constant="8" id="fa9-5R-0N5"/>
-                        <constraint firstItem="imo-Fv-tvD" firstAttribute="leading" secondItem="gb2-VJ-gnZ" secondAttribute="leading" constant="12" id="pZq-sn-XPQ"/>
+                        <constraint firstAttribute="bottom" secondItem="imo-Fv-tvD" secondAttribute="bottom" constant="25" id="5Zk-Fh-D9H"/>
+                        <constraint firstAttribute="trailing" secondItem="imo-Fv-tvD" secondAttribute="trailing" constant="12" id="6MJ-7n-05e"/>
+                        <constraint firstItem="IuT-y4-E8n" firstAttribute="leading" secondItem="gb2-VJ-gnZ" secondAttribute="leading" constant="24" id="CsB-H0-RoP"/>
+                        <constraint firstAttribute="height" constant="350" id="Q85-IR-pGa"/>
+                        <constraint firstAttribute="trailing" secondItem="IuT-y4-E8n" secondAttribute="trailing" constant="24" id="c9w-dn-xK4"/>
+                        <constraint firstItem="imo-Fv-tvD" firstAttribute="leading" secondItem="gb2-VJ-gnZ" secondAttribute="leading" constant="12" id="khQ-N4-uQa"/>
+                        <constraint firstAttribute="bottom" secondItem="IuT-y4-E8n" secondAttribute="bottom" constant="122" id="mhl-ze-RII"/>
+                        <constraint firstItem="IuT-y4-E8n" firstAttribute="top" secondItem="gb2-VJ-gnZ" secondAttribute="top" constant="22" id="wxe-u2-VOK"/>
                     </constraints>
                 </view>
             </subviews>

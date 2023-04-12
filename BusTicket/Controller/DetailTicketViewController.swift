@@ -9,10 +9,10 @@ import UIKit
 import Lottie
 
 class DetailTicketViewController: UIViewController {
-    
+    // MARK: - IBOutlet Definitions
     @IBOutlet weak var ticketsCollectionView: UICollectionView!
     @IBOutlet weak var pageController: UIPageControl!
-    
+    // MARK: - Variable Definitions
     var busInfo: BusInfo = BusInfo()
     var ticket: Ticket?
     var currentPage = 0 {
@@ -35,7 +35,7 @@ class DetailTicketViewController: UIViewController {
         performSegue(withIdentifier: "toBackFilterTicketVC", sender: nil)
     }
 }
-
+// MARK: Collection View Delegate, Data Source Extension
 extension DetailTicketViewController: UICollectionViewDelegate, UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let seatCount = ticket?.seatCount else { return 0 }
