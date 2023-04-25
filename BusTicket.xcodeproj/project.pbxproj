@@ -18,7 +18,6 @@
 		E5977D4729DCEFB000E35793 /* TimeTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5977D4629DCEFB000E35793 /* TimeTicket.swift */; };
 		E5994BCB29E44FBE005B36E7 /* SuccessPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5994BC929E44FBE005B36E7 /* SuccessPopUp.swift */; };
 		E5994BCC29E44FBE005B36E7 /* FormPassengerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5994BCA29E44FBE005B36E7 /* FormPassengerPopUp.xib */; };
-		E599EC0F29E6E727009D64FF /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = E599EC0E29E6E727009D64FF /* success.json */; };
 		E5A1AD6729DEE53300765E01 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */; };
 		E5A1AD6929DEE64200765E01 /* BusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6829DEE64200765E01 /* BusInfo.swift */; };
 		E5A1AD6B29DF176B00765E01 /* DetailBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */; };
@@ -34,6 +33,7 @@
 		E5D1622829DAEB190031BFB8 /* world.json in Resources */ = {isa = PBXBuildFile; fileRef = E5D1622729DAEB190031BFB8 /* world.json */; };
 		E5D1622A29DAF3580031BFB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1622929DAF3580031BFB8 /* LoginViewController.swift */; };
 		E5D1622C29DAF4F60031BFB8 /* welcome.json in Resources */ = {isa = PBXBuildFile; fileRef = E5D1622B29DAF4F60031BFB8 /* welcome.json */; };
+		E5D35BCD29F81A6400884431 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = E5D35BCC29F81A6400884431 /* success.json */; };
 		E5DCB51D29DB160D000AC687 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCB51C29DB160D000AC687 /* SignUpViewController.swift */; };
 		E5E5CCA129D9C6050078B1BD /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5CCA029D9C6050078B1BD /* OnboardingViewController.swift */; };
 		E5E5CCA429D9C7CC0078B1BD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5CCA329D9C7CC0078B1BD /* UIView+Extension.swift */; };
@@ -55,7 +55,6 @@
 		E5977D4629DCEFB000E35793 /* TimeTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTicket.swift; sourceTree = "<group>"; };
 		E5994BC929E44FBE005B36E7 /* SuccessPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPopUp.swift; sourceTree = "<group>"; };
 		E5994BCA29E44FBE005B36E7 /* FormPassengerPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormPassengerPopUp.xib; sourceTree = "<group>"; };
-		E599EC0E29E6E727009D64FF /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = success.json; path = ../../../../Downloads/success.json; sourceTree = "<group>"; };
 		E5A1AD6629DEE53300765E01 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 		E5A1AD6829DEE64200765E01 /* BusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusInfo.swift; sourceTree = "<group>"; };
 		E5A1AD6A29DF176B00765E01 /* DetailBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBusViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		E5D1622729DAEB190031BFB8 /* world.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = world.json; sourceTree = "<group>"; };
 		E5D1622929DAF3580031BFB8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E5D1622B29DAF4F60031BFB8 /* welcome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = welcome.json; sourceTree = "<group>"; };
+		E5D35BCC29F81A6400884431 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		E5DCB51C29DB160D000AC687 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E5E5CCA029D9C6050078B1BD /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E5E5CCA329D9C7CC0078B1BD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		E591FCB529DA4887003A43EC /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				E599EC0E29E6E727009D64FF /* success.json */,
+				E5D35BCC29F81A6400884431 /* success.json */,
 				E5D1622B29DAF4F60031BFB8 /* welcome.json */,
 				E5D1622729DAEB190031BFB8 /* world.json */,
 				E5F2C00E29DA569B00AC481C /* ticket.json */,
@@ -279,9 +279,9 @@
 			files = (
 				E5D1622829DAEB190031BFB8 /* world.json in Resources */,
 				E5CE93B529D9047400C916CF /* LaunchScreen.storyboard in Resources */,
+				E5D35BCD29F81A6400884431 /* success.json in Resources */,
 				E5994BCC29E44FBE005B36E7 /* FormPassengerPopUp.xib in Resources */,
 				E5CE93B229D9047400C916CF /* Assets.xcassets in Resources */,
-				E599EC0F29E6E727009D64FF /* success.json in Resources */,
 				E5F2C00F29DA569B00AC481C /* ticket.json in Resources */,
 				E591FCB729DA4891003A43EC /* bus.json in Resources */,
 				E5D1622C29DAF4F60031BFB8 /* welcome.json in Resources */,
